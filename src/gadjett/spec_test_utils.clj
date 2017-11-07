@@ -12,3 +12,14 @@
   (is (nil? (-> spec-check first :failure))
       (summarize-results' spec-check)))
 
+(defn check-n
+  "call stest/check with num-tests equals `n`
+   (check-n fn n)"
+  [fn n]
+  (stest/check fn {:clojure.spec.test.check/opts {:num-tests n}}))
+
+(defn check-100
+  "call stest/check with num-tests equals `100`
+   (check-100 fn)"
+  [fn]
+  (check-n fn 100))
