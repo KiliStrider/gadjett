@@ -78,7 +78,7 @@
     [bindings & body]
     (let [names (take-nth 2 bindings)
                   vals (take-nth 2 (drop 1 bindings))
-                  tempnames (map (comp gensym #(string/replace  % #"\." "_") name) names)
+                  tempnames (map (comp gensym #(clojure.string/replace  % #"\." "_") name) names)
                   binds (map vector names vals)
                   resets (reverse (map vector names tempnames))
                   bind-value (fn [[k v]] (list 'set! k v))]
