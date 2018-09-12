@@ -7,7 +7,8 @@
                  [org.clojure/core.async "0.3.442"]]
   :profiles {:codox {:dependencies [[viebel/codox-klipse-theme "0.0.5"]]
                      :plugins [[lein-codox "0.10.2"]]}
-             :dev {:dependencies [[midje "1.9.0-alpha6"]
+             :dev {:dependencies [[org.clojure/tools.nrepl "0.2.13"]
+                                  [midje "1.9.0-alpha6"]
                                   [org.clojure/test.check "0.9.0"]
                                   [com.velisco/herbert "0.7.0"]
                                   [figwheel-sidecar "0.5.6"]]
