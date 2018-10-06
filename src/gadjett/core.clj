@@ -9,6 +9,14 @@
        (println (str '~x ": ") x#)
        x#)))
 
+(defmacro dbgdef [x]
+  (when *assert*
+    (let [y (gensym "yyy")]
+      `(let [x# ~x]
+         (def ~y x#)
+         (println (str "(" '~y ")  " '~x  " => " x#))
+         x#))))
+
 (defmacro breakpoint []
   '(do (js* "debugger;")
        nil)) ; (prevent "return debugger;" in compiled javascript)
