@@ -820,6 +820,6 @@ Default settings:
    Useful when you need to remove some keys according to some conditions."
   [f args]
   (apply f (->> args
-                gadjett/compactize-map
+                compactize-map
                 (into [])
                 (mapcat identity))))
