@@ -3,7 +3,7 @@
   <groupId>viebel</groupId>
   <artifactId>gadjett</artifactId>
   <packaging>jar</packaging>
-  <version>0.5.6</version>
+  <version>0.5.7</version>
   <name>gadjett</name>
   <description>Inspector tools for clojure[script]</description>
   <url>https://github.com/viebel/gadjett</url>
@@ -11,7 +11,7 @@
     <url>https://github.com/viebel/gadjett</url>
     <connection>scm:git:git://github.com/viebel/gadjett.git</connection>
     <developerConnection>scm:git:ssh://git@github.com/viebel/gadjett.git</developerConnection>
-    <tag>9d838b457e087899cf7063b32ee3ac0f8890bc4d</tag>
+    <tag>3c4c02a8d289a10a4d9a422f90d22fbf5caad3d5</tag>
   </scm>
   <build>
     <sourceDirectory>src</sourceDirectory>
