@@ -814,3 +814,12 @@ Default settings:
   [map ks]
   (reduce #(conj %1 (map %2)) [] ks))
 
+
+(defn apply-with-map
+  "Call a function - that expects spliced key values - with a map (ignoring key/values where value is nil).
+   Useful when you need to remove some keys according to some conditions."
+  [f args]
+  (apply f (->> args
+                gadjett/compactize-map
+                (into [])
+                (mapcat identity))))
