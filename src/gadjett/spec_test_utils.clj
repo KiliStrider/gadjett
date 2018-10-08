@@ -1,8 +1,8 @@
 (ns gadjett.spec-test-utils
   (:require [clojure.pprint :as pprint]
-            [clojure.spec :as s]
+            [clojure.spec.alpha :as s]
             [clojure.test :refer [is]]
-            [clojure.spec.test :as stest]))
+            [clojure.spec.test.alpha :as stest]))
 
 
 (defn summarize-results' [spec-check]
