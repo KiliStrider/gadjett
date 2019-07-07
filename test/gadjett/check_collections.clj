@@ -89,5 +89,16 @@
                  (println "s: " s " n: " n)
                  (= (substr s 0 n) s))))
 
-
-
+(defspec check-order-by 100
+         (hg/property (fn [v]
+                        (let [keyfn-direction-pairs [#(mod % 3) :asc #(mod % 2) :desc #(mod % 5) :asc #(mod % 19) :desc]
+                              keyfns (take-nth 2 keyfn-direction-pairs)
+                              order-by-v (order-by keyfn-direction-pairs v)
+                              sort-by-v (sort-by
+                                          (apply juxt keyfns)
+                                          (fn [[x1 x2 x3 x4] [y1 y2 y3 y4]]
+                                            (compare [x1 y2 x3 y4] [y1 x2 y3 x4]))
+                                          v)]
+                          (and
+                            (= order-by-v sort-by-v))))
+                      '[int+]))

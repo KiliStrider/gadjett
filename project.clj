@@ -18,6 +18,7 @@
                              [lein-midje "3.2"]]}}
   :figwheel {:server-port 2512}
   :source-paths ["src" "script" "try"]
+  :plugins [[lein-codox "0.10.7"]]
   :codox {
                                         ; :language :clojurescript
           :source-uri "https://github.com/viebel/gadjett/blob/master/{filepath}#L{line}"
